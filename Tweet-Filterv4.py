@@ -15,6 +15,11 @@ from sklearn.svm import LinearSVC
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import cross_validate
 
+# A ML approach to filtering spam twitter tweets. I find that there are a lot of spam bots in crypto twitter that make it hard to make sense of factual data. The objective is to be able to remove the spam
+# data so that we can then process real tweets from real people and use it for sentiment analysis and market understanding.
+# I created a sample data set that has been manually sorted into spam and not spam for training. A better sample set could yield a better result.
+# I Make use of of a pipeline to handle preprocesing and removal of stop words and symbols like hashtags and dollar signs which are very common in spam tweets. Then vectorize the results so that a Naive Bays classifier can do its thing.
+# So far the accuracy ranges betwen 84% - 88% and improvements with better and larger data set and better preprocessing will improve the results.
 class Preprocessor(BaseEstimator, TransformerMixin):
     def __init__(self):
         self.lower = True

@@ -2,6 +2,9 @@ import got3 as tweetory
 import datetime
 import csv
 
+
+# This small program makes use of got3 library to retrieve historical twitter data for specific tags or handle which we can then save to a csv. The data can then later be used for training models to
+# identify new exchange listings, spam tweets and important news using different classifiers.
 def toCSV(t,fl):
 	with open(fl, "w+",encoding="utf-8",newline="") as file:
 		write = csv.writer(file)
